@@ -88,7 +88,6 @@ CREATE TABLE UsuarioTarefa (
     FOREIGN KEY(FK_Tarefa_Id_Tarefa) REFERENCES Tarefa(Id_Tarefa)
 );
 
-CREATE TABLE TESTE() 
 
 
 

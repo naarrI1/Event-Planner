@@ -1,10 +1,7 @@
--- Criação do banco de dados
 CREATE DATABASE EventoDB;
 
--- Seleciona o banco de dados
 USE EventoDB;
 
--- Criação da tabela Usuario
 CREATE TABLE Usuario (
     Id_Usuario INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -13,7 +10,6 @@ CREATE TABLE Usuario (
     Empresa VARCHAR(100)
 );
 
--- Criação da tabela Fornecedor
 CREATE TABLE Fornecedor (
     Id_Fornecedor INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -22,7 +18,6 @@ CREATE TABLE Fornecedor (
     Disponibilidade VARCHAR(50)
 );
 
--- Criação da tabela Proposta
 CREATE TABLE Proposta (
     Id_Proposta INT AUTO_INCREMENT PRIMARY KEY,
     Valor DECIMAL(10, 2) NOT NULL,
@@ -32,7 +27,6 @@ CREATE TABLE Proposta (
     FOREIGN KEY (FK_Id_Fornecedor) REFERENCES Fornecedor(Id_Fornecedor)
 );
 
--- Criação da tabela Evento
 CREATE TABLE Evento (
     Id_Evento INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -44,7 +38,6 @@ CREATE TABLE Evento (
     -- FOREIGN KEY (FK_Id_Usuario) REFERENCES Usuario(Id_Usuario)
 );
 
--- Criação da tabela Tarefa
 CREATE TABLE Tarefa (
     Id_Tarefa INT AUTO_INCREMENT PRIMARY KEY,
     Descricao TEXT,
@@ -55,7 +48,6 @@ CREATE TABLE Tarefa (
     FOREIGN KEY (FK_Id_Evento) REFERENCES Evento(Id_Evento)
 );
 
--- Criação da tabela Convidados
 CREATE TABLE Convidados (
     Id_Convidado INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,

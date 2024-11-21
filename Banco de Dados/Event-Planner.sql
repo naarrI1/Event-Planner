@@ -1,7 +1,6 @@
 CREATE DATABASE EventoDB;
 USE EventoDB;
 
-# Tabela de Usuários
 CREATE TABLE Usuario (
     Id_Usuario INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -10,7 +9,7 @@ CREATE TABLE Usuario (
     Empresa VARCHAR(100)
 );
 
-# Tabela de Fornecedores
+
 CREATE TABLE Fornecedor (
     Id_Fornecedor INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -19,7 +18,6 @@ CREATE TABLE Fornecedor (
     Disponibilidade VARCHAR(50)
 );
 
-# Tabela de Propostas de Fornecedores
 CREATE TABLE Proposta (
     Id_Proposta INT AUTO_INCREMENT PRIMARY KEY,
     Valor DECIMAL(10, 2) NOT NULL,
@@ -29,7 +27,6 @@ CREATE TABLE Proposta (
     FOREIGN KEY (FK_Id_Fornecedor) REFERENCES Fornecedor(Id_Fornecedor)
 );
 
-# Tabela de Eventos
 CREATE TABLE Evento (
     Id_Evento INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
@@ -52,14 +49,12 @@ CREATE TABLE Tarefa (
     FOREIGN KEY (FK_Id_Evento) REFERENCES Evento(Id_Evento)
 );
 
-# Tabela de Convidados
 CREATE TABLE Convidados (
     Id_Convidado INT AUTO_INCREMENT PRIMARY KEY,
     Nome VARCHAR(100) NOT NULL,
     Papel VARCHAR(50)
 );
 
-# Evento e Convidados
 CREATE TABLE EventoConvidados (
     FK_Evento_Id_Evento INT,
     FK_Convidados_Id_Convidado INT,
@@ -77,7 +72,6 @@ CREATE TABLE UsuarioEvento (
     FOREIGN KEY(FK_Evento_Id_Evento) REFERENCES Evento(Id_Evento)
 );
 
-# Usuários e Tarefas
 CREATE TABLE UsuarioTarefa (
     FK_Usuario_Id_Usuario INT,
     FK_Tarefa_Id_Tarefa INT,
